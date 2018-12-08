@@ -1,0 +1,29 @@
+[package]
+name = "babelfish"
+version = "0.1.0"
+authors = ["Ivan Tham <pickfire@riseup.net>"]
+edition = "2018"
+description = "Universal translater for encodings"
+repository = "https://github.com/pickfire/babelfish"
+readme = "README.md"
+keywords = ["translate", "convert", "format", "cbor2json"]
+categories = ["command-line-utilities", "encoding"]
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+serde-transcode = "1.0"
+serde_json = { version = "1.0", optional = true }
+serde_cbor = { version = "0.9", optional = true }
+
+[features]
+default = ["json", "cbor"]
+json = ["serde_json"]
+cbor = ["serde_cbor"]
+
+[[bin]]
+name = "cbor2json"
+required-features = ["json", "cbor"]
+
+[[bin]]
+name = "json2cbor"
+required-features = ["json", "cbor"]
