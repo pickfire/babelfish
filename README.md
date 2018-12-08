@@ -19,6 +19,12 @@ To install babelfish with only support for `cbor` and `json` which provides
 $ cargo install babelfish --features="cbor json"  # cbor2json, json2cbor
 ```
 
+### Supported encodings
+
+- cbor
+- json
+- toml
+
 ## Usage
 
 Currently, conversion can only be done with input output.
