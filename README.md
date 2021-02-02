@@ -24,6 +24,7 @@ $ cargo install babelfish --features="cbor json"  # cbor2json, json2cbor
 - cbor
 - json
 - toml
+- yaml
 
 ## Usage
 
