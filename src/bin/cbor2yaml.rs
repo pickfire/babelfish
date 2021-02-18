@@ -1,7 +1,8 @@
-use std::io::{self, BufReader, BufWriter};
+use std::io::{self, BufWriter};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let reader = BufReader::new(io::stdin());
+    let reader = io::stdin();
+    let reader = reader.lock();
     let writer = BufWriter::new(io::stdout());
 
     let mut deserializer = serde_cbor::Deserializer::from_reader(reader);

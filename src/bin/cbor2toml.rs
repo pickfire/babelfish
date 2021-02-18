@@ -1,7 +1,8 @@
-use std::io::{self, BufReader, BufWriter, Write};
+use std::io::{self, BufWriter, Write};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let reader = BufReader::new(io::stdin());
+    let reader = io::stdin();
+    let reader = reader.lock();
     let mut writer = BufWriter::new(io::stdout());
 
     let mut buffer = String::new();
